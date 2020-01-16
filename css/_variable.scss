@@ -1,0 +1,272 @@
+$primary: #262ba0;
+$secendary: #f0622c;
+$blue: $primary;
+$orange: $secendary;
+$white: #ffffff;
+$black: #000000;
+$warning: #fec700;
+$danger: #f0622c;
+$popp: 'Poppins', sans-serif;
+
+@each $color, $value in (blue, #262ba0), (orange, #f0622c), (black, #000000),(white, $white), (warning, #fec700), (danger, #f0622c){
+    .text-#{$color}{color: $value!important;
+    }
+    .btn-#{$color}{
+        @if($value == $black){
+            color: $white;
+        }@else if($value == $white){
+            color: $black!important; 
+        }@else{
+            color: $white;
+        }
+        background-color: $value;
+        &:hover{
+            background-color: darken($value, 20%);
+            color: $white;
+        }
+    }
+}
+@mixin background($color: null, $repeat: no-repeat, $position: center center, $size: cover){
+    background-color: $color;
+    //background-image: url($url);
+    background-repeat: $repeat;
+    background-position: $position;
+    background-size: $size;
+    //background-attachment: fixed;
+}
+@mixin d-flex{
+    display: -webkit-flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin radius($rad:0.25rem){
+    -webkit-border-radius: $rad;
+    -moz-border-radius: $rad;
+    -o-border-radius: $rad;
+    border-radius: $rad;
+}
+@mixin transform($value){
+    -webkit-transform: $value;
+    -moz-transform: $value;
+    -o-transform: $value;
+    transform: $value;
+}
+@mixin transition($property: all, $duration: 600ms, $function: linear, $delay: 0ms){
+    transition-property: $property;
+    transition-duration: $duration;
+    transition-timing-function: $function;
+    transition-delay: $delay;
+}
+@mixin columns($number){
+    -webkit-column-count: $number;
+    column-count: $number;
+}
+@mixin shadow($value){
+    -webkit-box-shadow: $value;
+    -moz-box-shadow: $value;
+    box-shadow: $value;
+}
+@mixin heading($size: 3.125rem, $weight: bold){
+    font-size: $size;
+    font-weight: $weight;
+    @include mediaMax(1400px){
+        font-size: $size - (1*1rem);
+    }
+    @include mediaMax(575px){
+        font-size: 2rem;
+    }
+    @include mediaMax(420px){
+        font-size: 1.5rem;
+    }
+}
+@mixin font-18($size: 1.125rem, $height:1.75){
+    font-size: $size;
+    line-height: $height;
+    @include mediaMax(1400px){
+        font-size: $size - 0.125rem;
+    }
+}
+@mixin media($max, $min){
+    @media screen and (max-width: $max) and (min-width: $min){
+        @content;
+    }
+}
+@mixin mediaMax($value){
+    @media screen and (max-width: $value){
+        @content;
+    }
+}
+@mixin mediaMin($value){
+    @media screen and (min-width: $value){
+        @content;
+    }
+}
+@for $i from 6 to 11{
+    .pt-#{$i}{
+        padding-top: 0.5rem * $i + 1rem;
+        @include mediaMax(767px){
+            padding-top: 0.25rem * $i + 1rem;
+        }
+    }
+    .pb-#{$i}{
+        padding-bottom: 0.5rem * $i + 1rem;
+        @include mediaMax(767px){
+            padding-bottom: 0.25rem * $i + 1rem;
+        }
+    }
+    .py-#{$i}{
+        padding-top: 0.5rem * $i + 1rem;
+        padding-bottom: 0.5rem * $i + 1rem;
+        @include mediaMax(767px){
+            padding-top: 0.25rem * $i + 1rem;
+            padding-bottom: 0.25rem * $i + 1rem;
+        }
+    }
+}
+.owl-carousel{
+    
+    @include mediaMin(576px){
+        padding-left: 3rem;
+    padding-right: 3rem;
+    }
+    .owl-nav{
+        .owl-prev, .owl-next{
+            position: absolute;
+            top: 50%;
+            @include transform(translateY(-50%));
+            width: 1rem;
+            font-size: 3rem!important;
+            &:focus, &:hover{
+                outline: none;
+                color: $primary;
+            }
+        }
+        .owl-prev{
+            left: 0.5rem;
+        }
+        .owl-next{
+            right: 0.5rem;
+        }
+    }
+}
+body, h1, h2, h3, h4, h5, h6, p{
+    font-family: $popp;
+}
+body{
+    //color: lighten($black, 39%);
+    @include mediaMax(575px){
+        font-size: 0.875rem;
+    }
+}
+p{
+    // @include mediaMin(1401px){
+    //     font-size: 1.125rem;
+    // }
+}
+.heading{
+    @include heading;
+}
+h1{
+    font-size: 3.125rem;
+    // @include mediaMax(767px){
+    //     font-size: 2rem;
+    // }
+    // @include mediaMax(767px){
+    //     font-size: 1.75rem;
+    // }
+}
+h2{
+    font-size: 2.25rem;
+    // @include mediaMax(767px){
+    //     font-size: 1.75rem;
+    // }
+    // @include mediaMax(767px){
+    //     font-size: 1.5rem;
+    // }
+}
+h3{
+    @include mediaMax(767px){
+        font-size: 1.5rem;
+    }
+    @include mediaMax(767px){
+        font-size: 1.25rem;
+    }
+    @include mediaMax(575px){
+        font-size: 1.125rem;
+    }
+}
+h4{
+    @include mediaMax(767px){
+        font-size: 1.25rem;
+    }
+    @include mediaMax(767px){
+        font-size: 1.125rem;
+    }
+}
+h5{
+    @include mediaMax(767px){
+        font-size: 1.125rem;
+    }
+    @include mediaMax(767px){
+        font-size: 1rem;
+    }
+}
+.btn{
+    //font-size: 1.125rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 1rem 2rem;
+    letter-spacing: 2px;
+    @include transition();
+    @include mediaMax(575px){
+        font-size: 0.875rem;
+        padding: 0.75rem 1.5rem;
+    }
+}
+.container{
+    &.container-xl{
+        @include mediaMin(1400px){
+            max-width: 88%;
+        }
+    }
+}
+.media{
+    .media-left{
+        margin-right: 1.5rem;
+    }
+    .media-right{
+        @include mediaMin(992px){
+            margin-left: 1.5rem;
+        }
+        @include mediaMax(991px){
+            margin-right: 1.5rem;
+        }
+    }
+}
+.icon{
+    width: 5rem;
+    height: 5rem;
+    padding: 0.5rem;
+    background-color: $primary;
+    @include radius(50%);
+    @include d-flex;
+    @include transition();
+    @include mediaMax(1400px){
+        width: 3rem;
+        height: 3rem;
+        padding: 0.25rem;
+    }
+    &:hover{
+        background-color: $secendary;
+    }
+}
+.heading-section{
+    h1{
+        @extend .heading;
+        margin-bottom: 2rem;
+    }
+    p{
+        font-size: 1.125rem;
+    }
+}

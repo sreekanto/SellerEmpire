@@ -1,0 +1,621 @@
+@import '_variable.scss';
+/*============
+    Header 
+    ==========*/
+header{
+    color: $white;
+    overflow: hidden;
+    .navbar{
+        position: absolute;
+        top: 2rem;
+        left: 0;
+        width: 100%;
+        z-index: 20;
+        padding-top: 0rem;
+        padding-bottom: 0rem;
+        @include mediaMax(1199px){
+            top: 1rem;
+        }
+        .navbar-brand{
+            display: inline-block;
+            max-width: 30%;
+            @include mediaMax(1600px){
+                max-width: 25%;
+            }
+            @include mediaMax(767px){
+                max-width: 50%;
+            }
+            img{
+                width: 100%;
+                height: auto;
+            }
+        }
+        .navbar-toggler{
+            border-color: $secendary;
+            color: $secendary;
+            i{
+                font-size: 1.5rem;
+            }
+        }
+        .navbar-nav{
+            @include mediaMax(1199px){
+                background-color: $primary;
+                padding: 0rem 1rem 1rem;
+            }
+            .nav-item{
+               
+                .nav-link{
+                    text-transform: capitalize;
+                    color: inherit;
+                    font-size: 1.125rem;
+                    font-weight: 300;
+                    font-family: $popp;
+                    padding: 0.75rem 2rem 0.75rem;
+                    @include mediaMax(1600px){
+                        padding: 0.5rem 1.25rem 0.5rem;
+                    }
+                    @include mediaMax(991px){
+                        padding: 0.5rem 1rem;
+                    }
+                    &.btn{
+                        font-weight: bold;
+                        text-transform: uppercase;
+                        font-size: 15px;
+                    }
+                }
+                &:not(:last-child){
+                    .btn{
+                        
+                        @include mediaMin(1200px){
+                            margin-right: 1rem;
+                        }
+                        @include mediaMax(1200px){
+                            margin-bottom: 0.5rem;
+                        }
+                    }
+                    // padding-right: 4rem;
+                    // @include mediaMax(1199px){
+                    //     padding-right: 3rem;
+                    // }
+                    // @include mediaMax(991px){
+                    //     padding-right: 0;
+                    // }
+                }
+                &.active, &:hover{
+                    .nav-link{
+                        //border-bottom: 1px solid $warning;
+                    }
+                }
+                
+            }
+        }
+    }
+}
+.dropdown{
+    &:hover{
+        @include mediaMin(1200px){
+            .dropdown-menu{
+                display: block
+            }
+        }
+    }
+}
+.banner{
+    @include background($white, no-repeat, left top, 100% 100%);
+    background-image: url('../images/banner.jpg');
+    height: 100%;
+    padding-top: 8rem;
+    height: 1200px;
+    @include mediaMax(1600px){
+        height: 1056px;
+    }
+    @include mediaMax(1600px){
+        height: 1056px;
+    }
+    @include mediaMax(1400px){
+        height: 56rem;
+    }
+    @include mediaMax(1200px){
+        height: 48rem;
+    }
+    @include mediaMax(991px){
+        background-size: contain;
+        height: auto;
+    }
+    @include mediaMax(767px){
+        //background-position: left top;
+        background-size: contain;
+        height: auto;
+    }
+    @include mediaMax(600px){
+        color: lighten($black, 50%);
+    }
+    .top-left{
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        // svg{
+        //     width: 100%;
+        //     height: auto;
+        //     background-color: $white;
+        //     #colorStop1{
+        //         stop-color: rgba($primary, 40%);style="stop-color:#072088"
+        //     }
+        // }
+    }
+    h1{
+        font-size: 4rem;
+        font-weight: 300;
+        margin-top: 10rem;
+        @include mediaMax(1500px){
+            margin-top: 5rem;
+        }
+        @include mediaMax(1400px){
+            font-size: 3rem;
+        }
+        @include mediaMax(991px){
+            font-size: 2rem;
+            margin-top: 3rem;
+        }
+        @include mediaMax(767px){
+            margin-top: 0rem;
+        }
+        @include mediaMax(350px){
+            font-size: 1.5rem;
+        }
+    }
+    p{
+        font-size: 1.5rem;
+        font-weight: 300;
+        @include mediaMax(1400px){
+            font-size: 1.25rem;
+        }
+        @include mediaMax(991px){
+            font-size: 1.125rem;
+        }
+        @include mediaMax(350px){
+            font-size: 0.875rem;
+        }
+    }
+    .btn{
+        margin-top: 2rem;
+        @include mediaMin(1401px){
+            font-size: 1.125rem;
+        }
+        @include mediaMax(1400px){
+            font-size: 1rem;
+        }
+        @include mediaMax(991px){
+            font-size: 0.875rem;
+        }
+        @include mediaMax(575px){
+            margin-top: 0rem;
+            font-size: 0.75rem;
+        }
+        
+    }
+}
+.top-right-50{
+    top: 52%;
+    right: 0;
+    @include transform(translateY(-50%));
+    z-index: 2;
+    @include mediaMax(1600px){
+        top: 55%;
+    }
+    @include mediaMax(1400px){
+        top: 65%;
+    }
+    @include mediaMax(991px){
+        //position: relative!important;
+        width: 30%!important;
+        top: 50%;
+    }
+    @include mediaMax(767px){
+        width: 60%!important;
+        top: 90%;
+    }
+    @include mediaMax(767px){
+        width: 50%!important;
+        top: 90%;
+    }
+    @include mediaMax(767px){
+        width: 70%!important;
+        top: 95%;
+    }
+    @include mediaMax(575px){
+        
+        top: 80%;
+    }
+}
+.rounded-box{
+    overflow: hidden;
+    height: 120%;
+    @include media(1500px, 1368px){
+        height: 90%;
+    }
+    @include mediaMax(991px){
+       height: 400px;
+    }
+    @include mediaMax(767px){
+        height: 350px;
+    }
+    @include mediaMax(767px){
+        width: 80%;
+        margin-left: auto;
+    }
+    img{
+        &.rounded-outer, &.rounded-inner{
+            position: absolute;
+            left: 0;
+            top: 0;
+        // border:1px solid red;
+            //@include radius(50%);
+            animation: round 80s linear infinite;
+            &:nth-child(odd){
+                animation-direction: reverse;
+                //&::{}
+            }
+        }
+        
+    }
+}
+@keyframes round{
+    0%{
+        @include transform(rotate(0deg));
+    }
+    100%{
+        @include transform(rotate(360deg));
+    }
+}
+/*======one-place-wrap===========*/
+.one-place-wrap{
+    overflow: hidden;
+    @include background($white, no-repeat, right 58%, 50% 40%);
+        background-image: url('../images//shape-right.png');
+        @include mediaMax(1500px){
+            background-position: right 55%;
+        }
+        @include mediaMax(1400px){
+            background-position: right 60%;
+        }
+    .row{
+        &:nth-child(odd){
+            [class^='col-']{
+                &:last-child{
+                    @include mediaMin(1401px){
+                        padding-left: 3rem;
+                    }
+                }
+            }
+        }
+        &:nth-child(even){
+            flex-direction: row-reverse;
+            [class^='col-']{
+                &:last-child{
+                    @include mediaMin(1401px){
+                        padding-right: 3rem;
+                    }
+                }
+            }
+        }
+    }
+    h2{
+        @include heading(2.5rem);
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    p{
+        @include font-18;
+        margin-bottom: 1.5rem;
+    }
+}
+/*=========seller-tool-wrap========*/
+.seller-tool-wrap{
+    @include background(#d6f1fc, no-repeat, center center, contain);
+    background-image: url('../images/sky-bg.png');
+    animation: rightToLeft 6s infinite;
+    animation-direction: alternate-reverse;
+    .row{
+        [class^='col-']{
+            &:first-child{
+                .media{
+                    margin-left: auto;
+                    @include mediaMax(991px){
+                       // background-color: red;
+                        flex-direction: row-reverse;
+                    }
+                }
+            }
+            &:nth-child(2){
+                @include mediaMax(991px){
+                    order: -1;
+                }
+                img{
+                   // @include shadow(0px 0px 10px 10px rgba($white, 60%));
+                   filter: drop-shadow(0px 0px 10px rgba($white, 60%));
+                }
+            }
+        }
+    }
+    .media{
+        @include mediaMax(991px){
+            margin-top: 1.5rem;
+        }
+        &:not(:last-child){
+            @include mediaMin(992px){
+                margin-bottom: 3rem;
+            }
+        }
+        @include mediaMin(1401px){
+            max-width: 75%;
+        }
+        .icon{
+            background-color: $white;
+            // width: 6.5rem;
+            // height: 6.5rem;
+            border: 1px dotted #707070;
+            @include shadow(0px 0px 0px 0.5rem $white);
+        }
+        h5{
+            font-weight: bold;
+            color: lighten($black, 13.5%);
+            text-transform: uppercase;
+            @include mediaMin(1401px){
+                font-size: 1.25rem;
+            }
+        }
+        p{
+            font-size: 1rem;
+        }
+    }
+    .btn{
+        width: 20rem;
+        @include mediaMax(575px){
+            width: 100%;
+        }
+    }
+}
+@keyframes rightToLeft{
+    0%{
+        background-position: center center;
+    }
+    100%{
+        background-position: 70% 70%;
+    }
+}
+/*==========owner-wrap=========*/
+.owner-wrap{
+    @include background(#3f33b1, no-repeat, center right, contain);
+    background-image: url('../images/review-bg.jpg');
+    @include mediaMin(1401px){
+        height: 42rem;
+    }
+    @include mediaMax(575px){
+        background-size: cover;
+    }
+    .container{
+        position: relative;
+        &::before{
+            content: "";
+            position: absolute;
+            left: 0;
+            top: -4rem;
+            background-image: url('../images/quote-icon.png');
+            width: 7rem;
+            height: 7rem;
+            @include mediaMax(767px){
+                top: -2rem;
+                width: 4rem;
+                height: 4rem;
+                background-size: 4rem;            
+            }
+        }
+    }
+    h3{
+        font-weight: 100;
+        @include mediaMin(1401px){
+            font-size: 1.875rem;
+            line-height: 1.75;
+        }
+    }
+    .media{
+        h3{
+            @include mediaMin(1401px){
+                font-size: 1.375rem;
+            }
+        }
+    }
+}
+/*==========Review wrap========*/
+.review-wrap{
+    .box{
+        background-color: #f0622c;
+        color: $white;
+        @include radius();
+        h2{
+            font-size: 2.75rem;
+            font-weight: 400;
+            text-transform: uppercase;
+            @include mediaMax(1400px){
+                font-size: 2.125rem;
+            }
+            @include mediaMax(767px){
+                font-size: 1.75rem;
+            }
+            @include mediaMax(575px){
+                font-size: 1.25rem;
+            }
+        }
+        .five-star{
+            font-size: 2.5rem;
+            @include mediaMax(1400px){
+                font-size: 1.25rem;
+            }
+            @include mediaMax(767px){
+                font-size: 1rem;
+            }
+        }
+        h5{
+            font-weight: 300;
+            @include mediaMin(1401px){
+                font-size: 1rem;
+            }
+            
+        }
+        .btn{
+            font-weight: bold;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            color: inherit;
+            letter-spacing: 0.125rem;
+            @include mediaMax(1400px){
+                font-size: 1.125rem;
+            }
+            @include mediaMax(767px){
+                font-size: 1rem;
+            }
+        }
+    }
+    .owl-carousel{
+        .item{
+            .item-bottom{
+                font-size: 15px;
+                color: lighten($black, 60%);
+                @include mediaMax(767px){
+                    flex-direction: column;
+                }
+                .btn{
+                    font-size: 0.875rem;
+                    font-weight: 300;
+                    text-transform: unset;
+                    color: inherit;
+                    padding: 0.5rem 0.5rem;
+                    @include shadow(none);
+                    @include mediaMax(767px){
+                        margin: 0rem!important;
+                        text-align: left;
+                    }
+                    &:hover{
+                        color: $primary;
+                    }
+                }
+            }
+        }
+    }
+}
+/*==========news-later-wrap==========*/
+.news-later-wrap{
+    color: $white;
+    background-image: linear-gradient(to right, $primary 60%, lighten($primary, 30%));
+    background-image: -webkit-linear-gradient(to right, $primary 60%, lighten($primary, 30%));
+    h2{
+        font-size: 2.75rem;
+            font-weight: bold;
+            @include mediaMax(1400px){
+                font-size: 2.125rem;
+            }
+    }
+    form{
+        border: 1px solid $white;
+        @include radius(0.25rem);
+        padding: 0.25rem;
+        .input-group{
+            @include d-flex;
+            .form-control{
+                background-color: transparent;
+                border: none;
+                font-size: 1rem;
+                font-weight: 400;
+                color: inherit;
+                @include shadow(none);
+                &-webkit-::placeholder, &-o-::placeholder, &::placeholder{
+                    color: inherit;
+                }
+            }
+            .btn{
+                padding: 0.5rem 0.75rem;
+            }
+        }
+    }
+}
+/*============Footer=========*/
+footer{
+    font-size: 15px;
+    color: lighten($black, 31%);
+    font-weight: 400;
+    @include mediaMax(575px){
+        font-size: 14px;
+    }
+    @extend .py-6;
+    .container-xl{
+        @include mediaMin(1401px){
+            padding-left: 6rem;
+            padding-right: 6rem;
+        }
+    }
+    .media{
+        p{
+            text-transform: uppercase;
+            font-weight: 300;
+            margin: 0;
+        }
+        a{
+            font-size: 1.625rem;
+            font-weight: bold;
+            color: lighten($black, 14%);
+            text-decoration: none;
+            @include transition();
+            @include mediaMax(1400px){
+                font-size: 1.25rem;
+            }
+            @include mediaMax(767px){
+                font-size: 1.125rem;
+            }
+            @include mediaMax(575px){
+                font-size: 1rem;
+            }
+            &:hover{
+                color: $secendary;
+            }
+        }
+    }
+    .nav{
+        margin-top: 3rem;
+        @include mediaMax(575px){
+            margin-top: 1rem;
+            flex-direction: column;
+            text-align: left;
+        }
+        .nav-item{
+            .nav-link{
+                font-size: 1.125rem;
+                color: inherit;
+                text-transform: capitalize;
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+                @include transition();
+                @include mediaMax(767px){
+                    font-size: 1rem;
+                }
+                &:hover{
+                    color: $secendary;
+                }
+            }
+        }
+    }
+    .list-inline{
+        .list-inline-item{
+            a{
+                font-size: 1.5rem;
+                color: inherit;
+                margin: 0rem 1rem;
+                @include transition();
+                &:hover{
+                    color: $secendary;
+                }
+            }
+        }
+    }
+}
